@@ -2,6 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const IndexPage = ({ data }) =>
   (
@@ -13,7 +14,7 @@ const IndexPage = ({ data }) =>
             <div>
               <p>content: <div dangerouslySetInnerHTML={{ __html: node.html }} /></p>
             </div>
-            <img src={node.frontmatter.image} alt={node.id} width={"300px"} height={"300px"} />
+            <GatsbyImage alt={node.frontmatter.title} image={getImage(node.frontmatter.image)} />
             <div style={{ width: "400px", height: "2px", background: "gray" }} />
           </li>
         )}
