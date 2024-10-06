@@ -6,15 +6,15 @@ media_folder: static/images
 public_folder: ../../static/images/
 
 collections:
-  - name: "travel-packages"
+  - name: "coin-content"
     preview: false
-    label: "travel-packages"
-    folder: "contents/travel-location"
+    label: "coin-content"
+    folder: "contents/coin-content"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "title", name: "title",widget: "string"}
-      - { label: "travel date" , name: "travel-date" ,widget: "string"}
+      - { label: "Title", name: "title",widget: "string"}
+      - { label: "Price" , name: "price" ,widget: "string"}
       - { label: "image" , name: "feature-image" ,widget: "image"}
       - { label: "body" , name: "body" ,widget: "markdown"}
 

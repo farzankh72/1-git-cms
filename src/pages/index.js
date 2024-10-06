@@ -7,7 +7,7 @@ const IndexPage = ({ data }) => (
   <Layout>
     <ul>
       {data?.fileInformation?.edges.map(({ node }) => <li key={node?.id}>
-        {node?.id}
+        {node?.frontmatter.title} | {node?.frontmatter?.price}
       </li>)}
     </ul>
   </Layout>
@@ -23,12 +23,14 @@ export default IndexPage
 
 export const query = graphql`
   query {
-    fileInformation: allFile {
+    fileInformation: allMarkdownRemark {
       edges {
         node {
           id
-          base
-          prettySize
+          frontmatter {
+            title
+            price
+          }
         }
       }
     }
